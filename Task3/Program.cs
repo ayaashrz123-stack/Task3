@@ -8,7 +8,7 @@ using static Task3.Student;
 namespace Task3
 {
 
-    public class Student
+    class Student
     {
         public int studentId;
         public string name;
@@ -61,7 +61,7 @@ namespace Task3
     }
 
 }
-    public class Instructor
+   class Instructor
     {
         public int instructorId;
         public string name;
@@ -81,7 +81,7 @@ namespace Task3
     }
     }
 
-    public class Course
+   class Course
     {
         public int courseId;
         public string title;
@@ -97,7 +97,7 @@ namespace Task3
         // Methods
         public string PrintDetails()
         {
-        return $"Course Id = {courseId}\n \nCourse Name = {title}\n Instructor = {Instructor.name}\n ===========================================";
+        return $"Course Id = {courseId}\n Course Name = {title}\n Instructor = {Instructor.name}\n ===========================================";
     }
     }
 
@@ -344,15 +344,21 @@ namespace Task3
                             Console.Write("enter instructor Id : ");
                             int instructorId = Convert.ToInt32(Console.ReadLine());
                             Instructor finins = studentManager.FindInstructor(instructorId);
-                            if(finins != null)
+                        if (finins != null)
+                        {
+                            if (studentManager.AddCourse(new Course(id, title, finins)))
                             {
-                                studentManager.AddCourse(new Course (  id,  title,  finins ));
                                 Console.WriteLine(" Course added successfully ");
                             }
                             else
                             {
-                                Console.WriteLine("instructor not found");
+                                Console.WriteLine(" Course Already Exists");
                             }
+                        }
+                        else
+                        {
+                            Console.WriteLine("instructor not found");
+                        }
                                 
                         }
                         break;
@@ -423,6 +429,7 @@ namespace Task3
                             if (studentManager.instructors.Count == 0)
                             {
                                 Console.WriteLine("No Instructors , Enter instructors first!");
+                            break ;
                             }
                         Console.WriteLine("\n========== All Instructors ============");
                             for (int i = 0; i < studentManager.instructors.Count; i++)
