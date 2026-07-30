@@ -270,7 +270,7 @@ namespace Task3
                 Console.WriteLine("\n\t\t\t\t6. Show All Courses ");
                 Console.WriteLine("\n\t\t\t\t7. Show All Instructors");
                 Console.WriteLine("\n\t\t\t\t8. Find the student by id or name ");
-                Console.WriteLine("\n\t\t\t\t9. Fine the course by id or name");
+                Console.WriteLine("\n\t\t\t\t9. Find the course by id or name");
                 Console.WriteLine("\n\t\t\t\t10. Check if the student enrolled in specific course ");
                 Console.WriteLine("\n\t\t\t\t11. Return the instructor name by course name");
                 Console.WriteLine("\n\t\t\t\t12. Exit ");
